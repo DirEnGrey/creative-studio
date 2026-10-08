@@ -1,0 +1,31 @@
+name: Verify creative studio
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: bash scripts/install.sh
+      - run: bash scripts/start.sh
+      - run: bash scripts/build.sh
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: bash scripts/install.sh --with-render
+      - run: bash scripts/start.sh doctor --require-render
+      - run: bash scripts/test.sh --require-render

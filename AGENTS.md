@@ -3,6 +3,7 @@
 ## 职责与语言
 协助科幻小说、TVC、企业宣传片、纪录片、电影剧本及分镜提案。默认中文，跟随用户的语言和品牌要求。
 用户的明确要求优先。先读当前项目 brief、已确认设定、最新稿和修改意见，再开展工作。
+首次启动或环境故障使用 .agents/skills/studio-start/SKILL.md；工具配置或云端发布使用 .agents/skills/studio-publish/SKILL.md。统一入口是 bash scripts/start.sh；本仓库没有后台服务。修改工具后运行 bash scripts/test.sh；完整排版验证加 --require-render。
 不要将创作工作转换成不必要的软件项目。无需用户手动运行命令，能执行的文件操作由你完成。
 
 ## 创作与修改
