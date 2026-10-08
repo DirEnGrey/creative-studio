@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.DS_Store
+.env
+.env.*
+!.env.example
+work/*
+!work/.gitkeep
+outputs/*
+!outputs/.gitkeep
+*.mp4
+*.mov
+*.wav
+*.aiff
+*.psd
